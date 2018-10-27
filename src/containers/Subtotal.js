@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {getTest} from './actions'
 
-import containers from './containers';
-
-const { Subtotal } = containers
-
-class App extends Component {
+class Subtotal extends Component {
   componentWillMount() {
 
     // if (teehee ==='heetee') {
@@ -15,10 +10,11 @@ class App extends Component {
     // }
   }
   render() {
-    let { teehee, getTest } = this.props;
-    getTest();
+
     return (
-      <Subtotal />
+      <div id="sub-total" class="section">
+
+      </div>
     );
   }
 }
@@ -31,5 +27,5 @@ const mapStateToProps = (state) => {
 
 
 export default connect(mapStateToProps, {
-  getTest,
-})(App);
+
+})(Subtotal);
