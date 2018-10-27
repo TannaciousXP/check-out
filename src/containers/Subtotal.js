@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { setDiscount } from '../actions';
+
+import components from '../components';
+const { Entry } = components;
+
 class Subtotal extends Component {
   componentWillMount() {
-
-    // if (teehee ==='heetee') {
-    //   console.log(getTest);
-    //   getTest();
-    // }
+    const { discount, setDiscount } = this.props;
+    if (JSON.stringify(discount) === JSON.stringify({})){
+      setDiscount();
+    }
   }
   render() {
-
+    const { discount } = this.props;
     return (
-      <div id="sub-total" class="section">
-
+      <div id="subTotal" className="section">
+        <Entry
+          description={'test'}
+          pricing={100}
+          secondLine={'Teehee'}
+        />
       </div>
     );
   }
@@ -21,11 +29,11 @@ class Subtotal extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    teehee: state.testing
+    discount: state.discount
   }
 }
 
 
 export default connect(mapStateToProps, {
-
+  setDiscount
 })(Subtotal);

@@ -29,13 +29,35 @@ code {
 #root {
   min-width: var(--width-s-min);
   width: 40%;
-  height: 70%;
-  border: 1px solid red;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.4);
+}
+
+.container {
+  height: 100%;
 }
 
 .section {
   display: flex;
   flex-direction: column;
-  padding: 5%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  margin: 5%;
 
+}
+
+.discount {
+  border: 0;
+}
+
+.entry {
+  display: inline-flex;
+  justify-content: space-between;
+  font-size: 1rem;
+
+
+}
+
+.pricing {
+    font-weight: 800;
 }

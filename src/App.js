@@ -1,35 +1,31 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import {getTest} from './actions'
-
+import React from 'react';
 import containers from './containers';
 
-const { Subtotal } = containers
+const { Subtotal, Esttotal, Discount } = containers
 
-class App extends Component {
-  componentWillMount() {
-
-    // if (teehee ==='heetee') {
-    //   console.log(getTest);
-    //   getTest();
-    // }
-  }
-  render() {
-    let { teehee, getTest } = this.props;
-    getTest();
-    return (
-      <Subtotal />
-    );
-  }
-}
-
-const mapStateToProps = (state) => {
-  return {
-    teehee: state.testing
-  }
-}
+// Set default value here
 
 
-export default connect(mapStateToProps, {
-  getTest,
-})(App);
+// export default class App extends Component {
+//   componentWillMount() {
+
+//   }
+//   render() {
+//     return (
+//       <div className="container">
+//         <Subtotal/>
+//         <Esttotal/>
+//         <Discount/>
+//       </div>
+//     )
+//   }
+// }
+const App = () => (
+      <div className="container">
+        <Subtotal/>
+        <Esttotal/>
+        <Discount/>
+      </div>
+)
+
+export default App;

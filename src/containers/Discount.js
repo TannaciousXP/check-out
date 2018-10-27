@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { setDiscount } from '../actions';
 
 class Discount extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
+  }
   componentWillMount() {
 
-    // if (teehee ==='heetee') {
-    //   console.log(getTest);
-    //   getTest();
-    // }
   }
   render() {
-    let { teehee, getTest } = this.props;
-    getTest();
+
     return (
-      <div>{teehee}</div>
+      <div className="section discount">Teehee</div>
     );
   }
 }
