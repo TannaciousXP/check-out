@@ -1,5 +1,5 @@
 export const getSubTotal = (itemsArr) => {
   return itemsArr.reduce((total, item) => {
-    return total += item.price;
+    return total += item.info.price;
   }, 0)
 };

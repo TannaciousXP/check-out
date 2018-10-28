@@ -49,3 +49,11 @@ export let setSubTotal = function(amt) {
     payload: amt
   }
 }
+
+export const TOTAL = 'subTotal';
+export let setTotal = function(amt) {
+  return {
+    type: TOTAL,
+    payload: amt
+  }
+}
