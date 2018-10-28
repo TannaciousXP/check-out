@@ -9,22 +9,24 @@ const { Entry, Expand } = components;
 class Esttotal extends Component {
   constructor(props) {
     super(props)
-    const { zip, pickupDis, subTotal, total } = this.props;
+    const { zip, pickupDis, subTotal, total, discountAmt } = this.props;
     const tax = zip.zipCode[1];
     this.myRef = React.createRef();
     this.state = {
-      tax,
+      discountAmt,
       pickupDis,
-      total,
       subTotal,
+      tax,
+      total,
     }
   }
 
+
   componentWillMount() {
     // Get the calculation of the total before mounting
-    const { tax, subTotal, pickupDis } = this.state;
+    const { tax, subTotal, pickupDis, discountAmt } = this.state;
     const { setTotal } = this.props;
-    setTotal((subTotal) + (-pickupDis) + (tax * subTotal));
+    setTotal((subTotal) + (-pickupDis) + (tax * subTotal) + (-discountAmt));
   }
 
   render() {
@@ -44,6 +46,7 @@ class Esttotal extends Component {
 // TODO: get discount amount as well
 const mapStateToProps = (state) => {
   return {
+    discountAmt: state.discountAmt,
     discount: state.discount,
     pickupDis: state.pickupDis,
     subTotal: state.subTotal,

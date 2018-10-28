@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setDiscount } from '../actions';
 
 import components from '../components';
 const { Expand } = components
@@ -37,5 +36,4 @@ const mapStateToProps = (state) => {
 
 
 export default connect(mapStateToProps, {
-  setDiscount,
 })(Discount);

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { setDiscount } from '../actions';
 
 import components from '../components';
 const { Entry } = components;
@@ -9,22 +8,31 @@ const { Entry } = components;
 class Subtotal extends Component {
   constructor(props) {
     super(props)
-    const { zip, pickupDis, subTotal } = this.props;
+    const { zip, pickupDis, subTotal, discountAmt, discount } = this.props;
     const [zipCode, tax] = zip.zipCode;
     this.state = {
-      tax,
+      discountAmt,
+      discount,
       pickupDis,
       subTotal,
+      tax,
       zipCode,
     }
   }
 
   render() {
-    const { tax, subTotal, pickupDis, zipCode} = this.state;
+    const {
+      discountAmt,
+      discount,
+      pickupDis,
+      subTotal,
+      tax,
+      zipCode,
+    } = this.state;
+    console.log(discountAmt);
     const subElements = ['subTotal', 'pickUp', 'estTax'];
-
     return (
-      <div id='subTotal' className='section breakdown' ref={this.myRef}>
+      <div id='subTotal' className='section breakdown'>
         {
           subElements.map((ele, idx) => {
             let description = '',
@@ -57,7 +65,17 @@ class Subtotal extends Component {
             />
           })
         }
-
+        {
+          // Show add discount savings
+          discountAmt > 0 ?
+          <Entry
+            description='Applied discount'
+            dollars={discountAmt}
+            isDiscount={true}
+            discountCodes={discount}
+          /> :
+          ''
+        }
 
       </div>
     );
@@ -66,6 +84,7 @@ class Subtotal extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    discountAmt: state.discountAmt,
     discount: state.discount,
     pickupDis: state.pickupDis,
     subTotal: state.subTotal,
@@ -75,5 +94,4 @@ const mapStateToProps = (state) => {
 
 
 export default connect(mapStateToProps, {
-  setDiscount
 })(Subtotal);

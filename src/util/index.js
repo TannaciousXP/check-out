@@ -1,7 +1,8 @@
 import { Items } from './items';
-import { getSubTotal } from './helperFuncs';;
+import { getSubTotal, getDiscount } from './helperFuncs';;
 
 export default  {
   Items,
-  getSubTotal
+  getDiscount,
+  getSubTotal,
 }

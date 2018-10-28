@@ -1,12 +1,18 @@
 export const DISCOUNT = 'discountCode';
-export let setDiscount = function(currDiscData, key, value) {
+export let addDiscount = function(currDiscData, key, value) {
   currDiscData[key] = [true, value];
   return {
     type: DISCOUNT,
     payload: currDiscData
   };
 }
-
+export const UPDATEDISCOUNT = 'updateDiscountCode';
+export let updateDiscount = function (discountCodesObj) {
+  return {
+    type: UPDATEDISCOUNT,
+    payload: discountCodesObj
+  }
+}
 
 export const ITEMS = 'items';
 export let setItems = function(arrOfItems) {
@@ -54,6 +60,14 @@ export const TOTAL = 'subTotal';
 export let setTotal = function(amt) {
   return {
     type: TOTAL,
+    payload: amt
+  }
+}
+
+export const APPLYDISCOUNT = 'applyDiscount';
+export let applyDiscount = function(amt) {
+  return {
+    type: APPLYDISCOUNT,
     payload: amt
   }
 }

@@ -5,6 +5,6 @@ export default function(state = 0, action) {
     case TOTAL:
       return action.payload;
     default:
-      return 0;
+      return state;
   }
 }
