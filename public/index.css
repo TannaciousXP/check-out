@@ -58,6 +58,20 @@ code {
 
 }
 
-.pricing {
+.entry p {
+  margin-top: 0;
+}
+
+.dollars {
     font-weight: 800;
+}
+
+.estimate {}
+
+.show-items {
+  margin-bottom: 5%;
+}
+
+.no-margin {
+  margin: 0;
 }

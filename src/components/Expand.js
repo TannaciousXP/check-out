@@ -4,13 +4,19 @@ const Expand = ({ isDiscount, }) => {
   // Get props
 
   // Check if isDiscount
-
   // Make html template
-
-
+    // Enter Code
+    // Show Items
 
   return (
-    <div>Brahh</div>
+    <div>
+      {
+        isDiscount ?
+        <div>EnterCode</div> :
+        <div className='show-items'>ShowItems</div>
+      }
+    </div>
+
   )
 };
 

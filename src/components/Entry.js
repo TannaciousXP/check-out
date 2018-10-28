@@ -1,22 +1,42 @@
 import React from 'react';
 
-const Entry = ({ description, pricing, secondLine }) => (
-  <div className="entry">
-    <p className="">
-      {description}
-      {
-        secondLine.length > 0 ?
-        (<br/>) : ''
-      }
-      {
-        secondLine.length > 0 ?
-        secondLine : ''
-      }
+const Entry = ({
+    description,
+    dollars,
+    secondLine = null,
+    isEst = false,
+    isToolTip = null,
+    toolTipText = '' ,
+    isStateTax = false,
+  }) => {
 
-    </p>
-    <p className="pricing">${pricing}</p>
-  </div>
-);
 
+    return (
+    <div className="entry">
+      <p className="">
+        {description}
+        {
+          secondLine ?
+            <p className="no-margin">
+              {secondLine}
+            </p>
+
+            : ''
+        }
+      </p>
+        <p className="dollars">{``}</p>
+    </div>
+  )
+};
+
+/*
+
+      {
+        `
+        ${description}
+        ${secondLine ? secondLine : ''}
+        `
+      }
+ */
 
 export default Entry;

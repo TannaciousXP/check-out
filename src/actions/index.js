@@ -1,9 +1,9 @@
 export const DISCOUNT = 'discountCode';
-export let setDiscount = function(currDiscData, newProp) {
-  let discount = [true, .10];
+export let setDiscount = function(currDiscData, key, value) {
+  currDiscData[key] = [true, value];
   return {
     type: DISCOUNT,
-    payload: { 'DISCOUNT': [true, .10]}
+    payload: currDiscData
   };
 }
 
@@ -13,5 +13,39 @@ export let setItems = function(arrOfItems) {
   return {
     type: ITEMS,
     payload: arrOfItems
+  }
+}
+
+export const ZIP = 'zipCode';
+export let setZip = function (currZip, value) {
+  // value = [zipCode, taxWithDecimal]
+  currZip[ZIP] = value;
+  return {
+    type: ZIP,
+    payload: currZip
+  }
+}
+
+export const ISPICKUP = 'pickup';
+export let setPickupFlag = function (bool) {
+  return {
+    type: ISPICKUP,
+    payload: bool
+  }
+}
+
+export const PICKUPDISC = 'pickupDisc';
+export let setPickupDisc = function(amt) {
+  return {
+    type: PICKUPDISC,
+    payload: amt
+  }
+}
+
+export const SUBTOTAL = 'subTotal';
+export let setSubTotal = function(amt) {
+  return {
+    type: SUBTOTAL,
+    payload: amt
   }
 }

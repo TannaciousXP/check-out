@@ -2,31 +2,40 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setDiscount } from '../actions';
 
+import components from '../components';
+const { Expand } = components
+
 class Discount extends Component {
   constructor(props) {
     super(props);
-    this.state = {
 
+    let {discount} = this.props
+     this.state = {
+      discount
     }
   }
+
+
   componentWillMount() {
 
   }
-  render() {
 
+  render() {
     return (
-      <div className="section discount">Teehee</div>
+      <div id="discount" className="section discount">
+        <Expand isDiscount={true}/>
+      </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    teehee: state.testing
+    discount: state.discount,
   }
 }
 
 
 export default connect(mapStateToProps, {
-
+  setDiscount,
 })(Discount);

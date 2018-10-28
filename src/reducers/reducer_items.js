@@ -1,5 +1,7 @@
 import { ITEMS } from '../actions';
-import { Items } from '../itemsInfo/items';
+import utils from '../util';
+
+const { Items } = utils;
 
 export default function(state = Items, action) {
   switch(action.type) {
