@@ -22,14 +22,13 @@ class Subtotal extends Component {
 
   render() {
     const {
-      discountAmt,
       discount,
       pickupDis,
       subTotal,
       tax,
       zipCode,
     } = this.state;
-    console.log(discountAmt);
+    const { discountAmt } = this.props;
     const subElements = ['subTotal', 'pickUp', 'estTax'];
     return (
       <div id='subTotal' className='section breakdown'>
@@ -70,7 +69,7 @@ class Subtotal extends Component {
           discountAmt > 0 ?
           <Entry
             description='Applied discount'
-            dollars={discountAmt}
+            dollars={-discountAmt}
             isDiscount={true}
             discountCodes={discount}
           /> :
