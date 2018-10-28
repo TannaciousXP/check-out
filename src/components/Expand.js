@@ -40,10 +40,10 @@ class Expand extends Component {
       if (key === prop) {
         if (discount[key][0] === true) {
           discount[key][0] = false;
-          let newTotal = total - (total * discount[key][1]);
+          let newTotal = total - (total * discount[key][1]).toFixed(2);
           updateDiscount(discount);
           applyDiscount(((total * discount[key][1]) + discountAmt).toFixed(2));
-          setTotal(newTotal.toFixed(2));
+          setTotal(newTotal);
         }
       }
     })
