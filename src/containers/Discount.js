@@ -14,11 +14,6 @@ class Discount extends Component {
     }
   }
 
-
-  componentWillMount() {
-
-  }
-
   render() {
     return (
       <div id="discount" className="section discount">
@@ -33,7 +28,6 @@ const mapStateToProps = (state) => {
     discount: state.discount,
   }
 }
-
 
 export default connect(mapStateToProps, {
 })(Discount);

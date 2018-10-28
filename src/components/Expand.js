@@ -78,6 +78,7 @@ class Expand extends Component {
           style={{ 'maxHeight': `${isExpand ? scrollHeight : 0}px`}}
         >
         {
+          // Return items or form
           !isDiscount ?
           items.map((item, idx) =>
             <Item

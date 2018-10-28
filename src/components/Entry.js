@@ -23,6 +23,7 @@ const Entry = ({
       <div className='entry'>
         <p className={`description`}>
           {
+            // Two ternary operators for displaying the discount and pick up savings
             (isDiscount && isPickup) ?
             <span>
               <span className='tooltip'>{description}
@@ -38,12 +39,12 @@ const Entry = ({
             : description
           }
           {
+            // Second line for Est Sales Tax
             secondLine ?
               <span className="no-space">
                 <br/>
                 {secondLine}
               </span>
-
               : ''
           }
           </p>

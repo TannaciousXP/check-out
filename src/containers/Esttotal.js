@@ -11,7 +11,6 @@ class Esttotal extends Component {
     super(props)
     const { zip, pickupDis, subTotal, total, discountAmt } = this.props;
     const tax = zip.zipCode[1];
-    this.myRef = React.createRef();
     this.state = {
       discountAmt,
       pickupDis,
@@ -20,7 +19,6 @@ class Esttotal extends Component {
       total,
     }
   }
-
 
   componentWillMount() {
     // Get the calculation of the total before mounting
@@ -43,7 +41,7 @@ class Esttotal extends Component {
     );
   }
 }
-// TODO: get discount amount as well
+
 const mapStateToProps = (state) => {
   return {
     discountAmt: state.discountAmt,
@@ -54,7 +52,6 @@ const mapStateToProps = (state) => {
     zip: state.zip
   }
 }
-
 
 export default connect(mapStateToProps, {
   setTotal
